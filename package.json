@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0",
+    "@vitest/coverage-v8": "^2.1.0"
   }
 }
