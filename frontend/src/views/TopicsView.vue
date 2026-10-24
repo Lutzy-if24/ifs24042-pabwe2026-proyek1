@@ -33,10 +33,12 @@ onMounted(async () => {
       <p class="muted">{{ t.description }}</p>
       <ul>
         <li v-for="m in t.materials" :key="m.id">
-          <RouterLink :to="`/materi/${m.id}`">{{ m.title }}</RouterLink>
+          <!-- PERBAIKAN: Menambahkan style underline pada link materi -->
+          <RouterLink :to="`/materi/${m.id}`" style="text-decoration: underline;">{{ m.title }}</RouterLink>
         </li>
       </ul>
-      <RouterLink :to="`/soal?topic=${t.id}`" class="btn btn-outline btn-sm">
+      <!-- PERBAIKAN: style text-decoration: none agar tombol tidak bergaris bawah -->
+      <RouterLink :to="`/soal?topic=${t.id}`" class="btn btn-outline btn-sm" style="text-decoration: none;">
         Latihan {{ t.problem_count }} soal
       </RouterLink>
     </div>

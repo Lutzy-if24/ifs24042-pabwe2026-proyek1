@@ -29,8 +29,8 @@ onMounted(async () => {
       Materi ringkas, soal bergaya OSN/KSN, dan pembahasan langkah demi langkah untuk Aljabar,
       Geometri, Teori Bilangan, dan Kombinatorika. Daftar untuk melacak progres belajarmu.
     </p>
-    <RouterLink to="/soal" class="btn">Mulai Latihan Soal</RouterLink>
-    <RouterLink to="/materi" class="btn btn-outline">Baca Materi</RouterLink>
+    <RouterLink to="/soal" class="btn" style="text-decoration: none;">Mulai Latihan Soal</RouterLink>
+    <RouterLink to="/materi" class="btn btn-outline" style="text-decoration: none;">Baca Materi</RouterLink>
   </section>
 
   <div v-if="error" class="alert alert-error">{{ error }}</div>
@@ -41,7 +41,8 @@ onMounted(async () => {
       <h3>{{ t.name }}</h3>
       <p class="muted">{{ t.description }}</p>
       <p class="tag">{{ t.problem_count }} soal · {{ t.material_count }} materi</p>
-      <RouterLink :to="`/soal?topic=${t.id}`">Lihat soal →</RouterLink>
+      <!-- PERBAIKAN: Tambahkan style underline pada link "Lihat soal" -->
+      <RouterLink :to="`/soal?topic=${t.id}`" style="text-decoration: underline;">Lihat soal →</RouterLink>
     </div>
   </div>
 
