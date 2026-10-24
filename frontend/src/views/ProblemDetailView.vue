@@ -92,7 +92,8 @@ async function toggleDone() {
         </button>
       </template>
       <p v-else class="muted">
-        <RouterLink :to="{ name: 'login', query: { redirect: route.fullPath } }">Masuk</RouterLink>
+        <!-- PERBAIKAN: Menambahkan text-decoration underline pada link Masuk -->
+        <RouterLink :to="{ name: 'login', query: { redirect: route.fullPath } }" style="text-decoration: underline;">Masuk</RouterLink>
         untuk menandai soal ini sebagai selesai.
       </p>
     </div>

@@ -8,9 +8,10 @@ const progress = useProgressStore();
 
 <template>
   <div class="card">
-    <h3>
-      <RouterLink :to="`/soal/${problem.id}`">{{ problem.title }}</RouterLink>
-    </h3>
+    <!-- PERBAIKAN: Mengubah h3 menjadi h2 dan menambahkan style underline -->
+    <h2>
+      <RouterLink :to="`/soal/${problem.id}`" style="text-decoration: underline;">{{ problem.title }}</RouterLink>
+    </h2>
     <div class="badges">
       <span class="badge">{{ problem.topic }}</span>
       <span class="badge" :class="`badge-${problem.level.toLowerCase()}`">{{ problem.level }}</span>
