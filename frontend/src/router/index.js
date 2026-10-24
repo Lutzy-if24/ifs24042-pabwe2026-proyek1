@@ -8,14 +8,12 @@ const routes = [
   { path: '/soal', name: 'problems', component: () => import('../views/ProblemsView.vue') },
   { path: '/soal/:id', name: 'problem', component: () => import('../views/ProblemDetailView.vue') },
   
-  // --- BAGIAN INI YANG KITA UBAH ---
   { 
     path: '/login', 
-    alias: '/auth/login', // Menambahkan alias agar bisa diakses via /auth/login
+    alias: '/auth/login',
     name: 'login', 
     component: () => import('../views/LoginView.vue') 
   },
-  // ---------------------------------
   
   { path: '/daftar', name: 'register', component: () => import('../views/RegisterView.vue') },
   {
@@ -33,7 +31,8 @@ const router = createRouter({
 
 // Halaman yang butuh login diarahkan ke /login (lalu kembali setelah masuk)
 router.beforeEach((to) => {
-  if (to.meta.requiresAuth && !useAuthStore().isAuthenticated) {
+  // PERBAIKAN: Menggunakan isLoggedIn sesuai dengan yang ada di store auth.js Anda
+  if (to.meta.requiresAuth && !useAuthStore().isLoggedIn) {
     return { name: 'login', query: { redirect: to.fullPath } };
   }
 });

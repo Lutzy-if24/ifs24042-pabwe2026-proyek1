@@ -33,18 +33,18 @@ async function submit() {
     
     <div class="field">
       <label for="username">Email</label>
-      <!-- UBAH ID DI SINI MENJADI username -->
       <input id="username" v-model="email" type="email" required autocomplete="email" />
     </div>
     
     <div class="field">
       <label for="password">Password</label>
-      <!-- ID INI SUDAH BENAR -->
       <input id="password" v-model="password" type="password" required autocomplete="current-password" />
     </div>
     
-    <!-- TAMBAHKAN id="btn-submit" DI SINI -->
-    <button id="btn-submit" class="btn" :disabled="loading">{{ loading ? 'Memproses…' : 'Masuk' }}</button>
+    <!-- PERBAIKAN: Tambahkan type="submit" di sini -->
+    <button id="btn-submit" type="submit" class="btn" :disabled="loading">
+      {{ loading ? 'Memproses…' : 'Masuk' }}
+    </button>
     
     <p class="muted">Belum punya akun? <RouterLink to="/daftar">Daftar</RouterLink></p>
   </form>
