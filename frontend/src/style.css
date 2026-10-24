@@ -19,8 +19,12 @@ body {
   color: var(--text);
   line-height: 1.6;
 }
+
+/* PERBAIKAN: Link default tidak di-underline agar navbar rapi, 
+   tapi akan di-underline saat di-hover */
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
+
 h1, h2, h3 { line-height: 1.25; margin: 0 0 .5rem; }
 .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 .muted { color: var(--muted); }
@@ -106,3 +110,12 @@ label { display: block; font-weight: 600; margin-bottom: .25rem; font-size: .9re
 
 /* Tombol di navbar tetap berteks putih */
 .nav-user a.btn, .nav-user a.btn:hover { color: #fff; }
+
+/* ========================================================= */
+/* PERBAIKAN AKSESIBILITAS (AXE CORE)                        */
+/* Memaksa semua link teks di dalam konten agar bergaris     */
+/* bawah, KECUALI link yang berbentuk tombol.                */
+/* ========================================================= */
+main a:not(.btn):not(.brand) {
+  text-decoration: underline !important;
+}
