@@ -39,8 +39,8 @@ function logout() {
           <button class="btn btn-outline btn-sm" @click="logout">Keluar</button>
         </template>
         <template v-else>
-          <!-- PERBAIKAN: Menambahkan style underline pada link Masuk -->
-          <RouterLink to="/login" style="text-decoration: underline; margin-right: 1rem;">Masuk</RouterLink>
+          <!-- PERBAIKAN: Menambahkan warna tegas, font bold, dan underline -->
+          <RouterLink to="/login" style="text-decoration: underline; margin-right: 1rem; font-weight: bold; color: #000;">Masuk</RouterLink>
           <RouterLink to="/daftar" class="btn btn-sm">Daftar</RouterLink>
         </template>
       </div>

@@ -50,7 +50,13 @@ async function submit() {
       <label for="password">Password (minimal 8 karakter)</label>
       <input id="password" v-model="password" type="password" required minlength="8" autocomplete="new-password" />
     </div>
-    <button class="btn" :disabled="loading">{{ loading ? 'Memproses…' : 'Daftar' }}</button>
-    <p class="muted">Sudah punya akun? <RouterLink to="/login">Masuk</RouterLink></p>
+    <!-- PERBAIKAN: Menambahkan type="submit" pada tombol -->
+    <button type="submit" class="btn" :disabled="loading">{{ loading ? 'Memproses…' : 'Daftar' }}</button>
+    
+    <p class="muted">
+      Sudah punya akun? 
+      <!-- PERBAIKAN: Menambahkan style underline pada link Masuk -->
+      <RouterLink to="/login" style="text-decoration: underline; font-weight: bold;">Masuk</RouterLink>
+    </p>
   </form>
 </template>
