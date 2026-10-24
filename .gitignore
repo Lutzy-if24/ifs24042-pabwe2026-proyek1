@@ -4,3 +4,7 @@ node_modules/
 .DS_Store
 backend/data/
 frontend/dist/
+.trivyignore
+package-lock.json
+backend/package-lock.json
+frontend/package-lock.json
