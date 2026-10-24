@@ -20,7 +20,7 @@ body {
   line-height: 1.6;
 }
 
-/* PERBAIKAN: Link default tidak di-underline agar navbar rapi, 
+/* Link default tidak di-underline agar navbar rapi, 
    tapi akan di-underline saat di-hover */
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -119,3 +119,6 @@ label { display: block; font-weight: 600; margin-bottom: .25rem; font-size: .9re
 main a:not(.btn):not(.brand) {
   text-decoration: underline !important;
 }
+
+/* Utilitas margin */
+.ml-2 { margin-left: 0.5rem; }

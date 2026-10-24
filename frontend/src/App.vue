@@ -8,10 +8,8 @@ const auth = useAuthStore();
 const progress = useProgressStore();
 const router = useRouter();
 
-// Validasi token tersimpan saat aplikasi dibuka
 onMounted(() => { if (auth.isLoggedIn) auth.refresh(); });
 
-// Muat progres saat login, kosongkan saat logout
 watch(() => auth.isLoggedIn, (loggedIn) => {
   if (loggedIn) progress.load();
   else progress.reset();
@@ -39,9 +37,8 @@ function logout() {
           <button class="btn btn-outline btn-sm" @click="logout">Keluar</button>
         </template>
         <template v-else>
-          <!-- PERBAIKAN: Menambahkan warna tegas, font bold, dan underline -->
-          <RouterLink to="/login" style="text-decoration: underline; margin-right: 1rem; font-weight: bold; color: #000;">Masuk</RouterLink>
-          <RouterLink to="/daftar" class="btn btn-sm" style="text-decoration: underline;">Daftar</RouterLink>
+          <RouterLink to="/login">Masuk</RouterLink>
+          <RouterLink to="/daftar" class="btn btn-sm">Daftar</RouterLink>
         </template>
       </div>
     </div>

@@ -28,15 +28,14 @@ onMounted(async () => {
 
   <div class="grid grid-2">
     <div v-for="t in topics" :key="t.id" class="card">
-      <!-- PERBAIKAN: h3 diubah menjadi h2 -->
       <h2>{{ t.name }}</h2>
       <p class="muted">{{ t.description }}</p>
       <ul>
         <li v-for="m in t.materials" :key="m.id">
-          <RouterLink :to="`/materi/${m.id}`" style="text-decoration: underline;">{{ m.title }}</RouterLink>
+          <RouterLink :to="`/materi/${m.id}`">{{ m.title }}</RouterLink>
         </li>
       </ul>
-      <RouterLink :to="`/soal?topic=${t.id}`" class="btn btn-outline btn-sm" style="text-decoration: none;">
+      <RouterLink :to="`/soal?topic=${t.id}`" class="btn btn-outline btn-sm">
         Latihan {{ t.problem_count }} soal
       </RouterLink>
     </div>

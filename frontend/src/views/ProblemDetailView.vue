@@ -82,18 +82,18 @@ async function toggleDone() {
       <span v-else class="muted">Pembahasan belum tersedia.</span>
 
       <template v-if="auth.isLoggedIn">
+        <!-- PERBAIKAN: Menghapus inline style margin-left dan menggantinya dengan class utility -->
         <button
-          class="btn btn-sm"
+          class="btn btn-sm ml-2"
           :class="progress.isDone(problem.id) ? 'btn-done' : 'btn-outline'"
-          style="margin-left: .5rem"
           @click="toggleDone"
         >
           {{ progress.isDone(problem.id) ? '✓ Selesai (klik untuk batalkan)' : 'Tandai selesai' }}
         </button>
       </template>
       <p v-else class="muted">
-        <!-- PERBAIKAN: Menambahkan text-decoration underline pada link Masuk -->
-        <RouterLink :to="{ name: 'login', query: { redirect: route.fullPath } }" style="text-decoration: underline;">Masuk</RouterLink>
+        <!-- PERBAIKAN: Menghapus inline style text-decoration. Garis bawah akan diurus oleh CSS global -->
+        <RouterLink :to="{ name: 'login', query: { redirect: route.fullPath } }">Masuk</RouterLink>
         untuk menandai soal ini sebagai selesai.
       </p>
     </div>

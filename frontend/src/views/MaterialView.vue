@@ -21,16 +21,12 @@ watch(() => route.params.id, load, { immediate: true });
 </script>
 
 <template>
-  <RouterLink to="/materi" style="text-decoration: underline;">← Semua materi</RouterLink>
-  
+  <RouterLink to="/materi">← Semua materi</RouterLink>
   <div v-if="error" class="alert alert-error">{{ error }}</div>
   <p v-else-if="!material" class="muted">Memuat…</p>
-  
   <article v-else class="card mt">
-    <!-- PERBAIKAN: H1 untuk nama materi -->
     <h1>{{ material.topic }}</h1>
-    
     <MarkdownView :source="material.content_md" />
-    <RouterLink :to="`/soal?topic=${material.topic_id}`" class="btn mt" style="text-decoration: none;">Latihan soal {{ material.topic }}</RouterLink>
+    <RouterLink :to="`/soal?topic=${material.topic_id}`" class="btn mt">Latihan soal {{ material.topic }}</RouterLink>
   </article>
 </template>
