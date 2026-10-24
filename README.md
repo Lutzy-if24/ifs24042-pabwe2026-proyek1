@@ -2,7 +2,7 @@
 
 Proyek 1 - Pengembangan Aplikasi Berbasis Web.
 
-Status: back-end (Express + SQLite) selesai. Front-end (Vue 3) menyusul.
+Status: back-end (Express + SQLite) selesai.Front-end (Vue 3) menyusul.
 README lengkap akan dibuat di Tahap 5.
 
 ## Menjalankan back-end
