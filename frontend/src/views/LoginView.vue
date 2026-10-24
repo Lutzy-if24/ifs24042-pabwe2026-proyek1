@@ -30,15 +30,22 @@ async function submit() {
   <form class="card form-card" @submit.prevent="submit">
     <h1>Masuk</h1>
     <div v-if="error" class="alert alert-error">{{ error }}</div>
+    
     <div class="field">
-      <label for="email">Email</label>
-      <input id="email" v-model="email" type="email" required autocomplete="email" />
+      <label for="username">Email</label>
+      <!-- UBAH ID DI SINI MENJADI username -->
+      <input id="username" v-model="email" type="email" required autocomplete="email" />
     </div>
+    
     <div class="field">
       <label for="password">Password</label>
+      <!-- ID INI SUDAH BENAR -->
       <input id="password" v-model="password" type="password" required autocomplete="current-password" />
     </div>
-    <button class="btn" :disabled="loading">{{ loading ? 'Memproses…' : 'Masuk' }}</button>
+    
+    <!-- TAMBAHKAN id="btn-submit" DI SINI -->
+    <button id="btn-submit" class="btn" :disabled="loading">{{ loading ? 'Memproses…' : 'Masuk' }}</button>
+    
     <p class="muted">Belum punya akun? <RouterLink to="/daftar">Daftar</RouterLink></p>
   </form>
 </template>
