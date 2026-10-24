@@ -41,7 +41,7 @@ function logout() {
         <template v-else>
           <!-- PERBAIKAN: Menambahkan warna tegas, font bold, dan underline -->
           <RouterLink to="/login" style="text-decoration: underline; margin-right: 1rem; font-weight: bold; color: #000;">Masuk</RouterLink>
-          <RouterLink to="/daftar" class="btn btn-sm">Daftar</RouterLink>
+          <RouterLink to="/daftar" class="btn btn-sm" style="text-decoration: underline;">Daftar</RouterLink>
         </template>
       </div>
     </div>
