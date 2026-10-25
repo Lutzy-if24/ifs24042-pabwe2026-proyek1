@@ -12,7 +12,6 @@ coverage/
 .scannerwork/
 trivy-results.sarif
 
-# Abaikan file lock agar Trivy tidak memindai dependencies
 package-lock.json
 bun.lock
 backend/package-lock.json
