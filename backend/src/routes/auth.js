@@ -63,3 +63,4 @@ router.get('/me', authenticate, (req, res) => {
 });
 
 module.exports = router;
+// TODO: Pastikan JWT_SECRET di production menggunakan environment variable yang aman
