@@ -11,3 +11,4 @@ coverage/
 .trivy-cache/
 .scannerwork/
 trivy-results.sarif
+coverage/
