@@ -31,3 +31,4 @@ function requireAdmin(req, res, next) {
 const adminOnly = [authenticate, requireAdmin];
 
 module.exports = { authenticate, requireAdmin, adminOnly };
+// TODO: Pastikan JWT_SECRET di production menggunakan environment variable yang aman
