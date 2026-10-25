@@ -11,6 +11,11 @@ coverage/
 .trivy-cache/
 .scannerwork/
 trivy-results.sarif
-coverage/
 
-
+# Abaikan file lock agar Trivy tidak memindai dependencies
+package-lock.json
+bun.lock
+backend/package-lock.json
+backend/bun.lock
+frontend/package-lock.json
+frontend/bun.lock
